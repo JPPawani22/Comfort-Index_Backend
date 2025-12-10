@@ -4,22 +4,22 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.0</version>
-		<relativePath/>
 	</parent>
 
-	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.fidenz</groupId>
 	<artifactId>weather-analytics</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>weather-analytics</name>
+	<version>1.0.0</version>
+	<name>Weather Analytics</name>
 	<description>Weather Analytics Application for Fidenz Assignment</description>
 
 	<properties>
 		<java.version>17</java.version>
+		<springdoc.version>2.3.0</springdoc.version>
 	</properties>
 
 	<dependencies>
@@ -34,10 +34,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 		<dependency>
@@ -47,14 +43,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-		</dependency>
-
-		<!-- Database -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.7.7</version>
-			<scope>runtime</scope>
 		</dependency>
 
 		<!-- Caching -->
@@ -70,17 +58,14 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- JSON Processing -->
+		<!-- API Documentation -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-jsr310</artifactId>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.version}</version>
 		</dependency>
 
-		<!-- Development Tools -->
+		<!-- Development -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>

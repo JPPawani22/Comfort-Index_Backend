@@ -1,0 +1,72 @@
+{
+  "1248991": {
+    "coord": {"lon": 79.8612, "lat": 6.9271},
+    "weather": [{"id": 801, "main": "Clouds", "description": "few clouds", "icon": "02d"}],
+    "main": {"temp": 33.0, "feels_like": 37.2, "pressure": 1010, "humidity": 78},
+    "wind": {"speed": 4.1, "deg": 210},
+    "clouds": {"all": 40},
+    "visibility": 10000,
+    "dt": 1701964800,
+    "sys": {"country": "LK", "sunrise": 1701936000, "sunset": 1701979200},
+    "timezone": 19800,
+    "id": 1248991,
+    "name": "Colombo",
+    "cod": 200
+  },
+  "1850147": {
+    "coord": {"lon": 139.6917, "lat": 35.6895},
+    "weather": [{"id": 800, "main": "Clear", "description": "clear sky", "icon": "01d"}],
+    "main": {"temp": 8.6, "feels_like": 6.2, "pressure": 1021, "humidity": 65},
+    "wind": {"speed": 2.5, "deg": 30},
+    "clouds": {"all": 0},
+    "visibility": 10000,
+    "dt": 1701964800,
+    "sys": {"country": "JP", "sunrise": 1701892800, "sunset": 1701928800},
+    "timezone": 32400,
+    "id": 1850147,
+    "name": "Tokyo",
+    "cod": 200
+  },
+  "2644210": {
+    "coord": {"lon": -2.9779, "lat": 53.4106},
+    "weather": [{"id": 500, "main": "Rain", "description": "light rain", "icon": "10d"}],
+    "main": {"temp": 16.5, "feels_like": 15.8, "pressure": 1008, "humidity": 82},
+    "wind": {"speed": 5.2, "deg": 250},
+    "clouds": {"all": 75},
+    "visibility": 10000,
+    "dt": 1701964800,
+    "sys": {"country": "GB", "sunrise": 1701932400, "sunset": 1701961200},
+    "timezone": 0,
+    "id": 2644210,
+    "name": "Liverpool",
+    "cod": 200
+  },
+  "2988507": {
+    "coord": {"lon": 2.3522, "lat": 48.8566},
+    "weather": [{"id": 800, "main": "Clear", "description": "clear sky", "icon": "01d"}],
+    "main": {"temp": 22.4, "feels_like": 21.8, "pressure": 1015, "humidity": 58},
+    "wind": {"speed": 3.1, "deg": 200},
+    "clouds": {"all": 0},
+    "visibility": 10000,
+    "dt": 1701964800,
+    "sys": {"country": "FR", "sunrise": 1701936000, "sunset": 1701968400},
+    "timezone": 3600,
+    "id": 2988507,
+    "name": "Paris",
+    "cod": 200
+  },
+  "2147714": {
+    "coord": {"lon": 151.2073, "lat": -33.8679},
+    "weather": [{"id": 500, "main": "Rain", "description": "light rain", "icon": "10d"}],
+    "main": {"temp": 27.3, "feels_like": 29.5, "pressure": 1012, "humidity": 74},
+    "wind": {"speed": 6.7, "deg": 160},
+    "clouds": {"all": 40},
+    "visibility": 10000,
+    "dt": 1701964800,
+    "sys": {"country": "AU", "sunrise": 1701885600, "sunset": 1701936000},
+    "timezone": 39600,
+    "id": 2147714,
+    "name": "Sydney",
+    "cod": 200
+  }
+}
