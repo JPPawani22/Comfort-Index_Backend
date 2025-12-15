@@ -1,0 +1,99 @@
+<nav class="bg-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo and Brand -->
+      <div class="flex items-center">
+        <a routerLink="/" class="flex items-center space-x-2">
+          <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+          </svg>
+          <span class="text-xl font-bold text-gray-800">Comfort Index</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex md:items-center md:space-x-4">
+        <ng-container *ngIf="isAuthenticated$ | async; else notAuthenticated">
+          <a routerLink="/dashboard" routerLinkActive="text-primary" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50">
+            Dashboard
+          </a>
+          
+          <!-- User Profile Dropdown -->
+          <div class="relative">
+            <button (click)="toggleProfile()" class="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+              <img *ngIf="(user$ | async)?.picture" [src]="(user$ | async)?.picture" alt="Profile" class="h-8 w-8 rounded-full">
+              <div *ngIf="!(user$ | async)?.picture" class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center">
+                {{ (user$ | async)?.name?.charAt(0) || 'U' }}
+              </div>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            <!-- Dropdown Menu -->
+            <div *ngIf="isProfileOpen" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+              <div class="px-4 py-2 text-sm text-gray-700 border-b">
+                <p class="font-medium">{{ (user$ | async)?.name }}</p>
+                <p class="text-xs text-gray-500">{{ (user$ | async)?.email }}</p>
+              </div>
+              <button (click)="logout()" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Sign out
+              </button>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-template #notAuthenticated>
+          <button (click)="login()" class="px-4 py-2 rounded-md text-sm font-medium text-white bg-primary hover:bg-blue-600">
+            Sign In
+          </button>
+        </ng-template>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button (click)="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div *ngIf="isMenuOpen" class="md:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <ng-container *ngIf="isAuthenticated$ | async; else mobileNotAuthenticated">
+        <a routerLink="/dashboard" routerLinkActive="bg-gray-100 text-primary" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">
+          Dashboard
+        </a>
+        
+        <div class="border-t border-gray-200 pt-4 pb-3">
+          <div class="flex items-center px-3">
+            <img *ngIf="(user$ | async)?.picture" [src]="(user$ | async)?.picture" alt="Profile" class="h-10 w-10 rounded-full">
+            <div *ngIf="!(user$ | async)?.picture" class="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center">
+              {{ (user$ | async)?.name?.charAt(0) || 'U' }}
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium text-gray-800">{{ (user$ | async)?.name }}</div>
+              <div class="text-sm font-medium text-gray-500">{{ (user$ | async)?.email }}</div>
+            </div>
+          </div>
+          <div class="mt-3 px-2 space-y-1">
+            <button (click)="logout()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">
+              Sign out
+            </button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #mobileNotAuthenticated>
+        <button (click)="login()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-600">
+          Sign In
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</nav>
